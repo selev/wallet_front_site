@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title id="Titulo">Billetera CR</title>
-    <head id="Ti">Billetera CR</head>
-</head>
-<body>
-
-<div id="cuerpoDatos">
-    <form id="diseñoEncuesta" class="DDatos">
-        <label for="Enombre">Nombre: </label><br>
-        <input type="text" id="EntradaNombre" name="EntradaNombre"><br>
-        <label for="ESalario">Salario: </label><br>
-        <input type="text" id="EntradaSalario" name="EntradaSalario"><br>
-        <label for="Egastos">Gastos: </label><br>
-        <input type="text" id="EntradaGastos" name="EntradaGastos"><br>
-        <label for="Emoneda" >Moneda: </label><br>
-        <input type="text" id="EntradaMoneda" name="EntradaMoneda"><br>
-
-    </form>
-    <button id="botonResgistro">Registrar</button>
-
-</div>
-    
-</body>
+  </head>
+  <body>
+    <header>
+      <h1>Billetera CR</h1>
+      <hr />
+    </header>
+    <div id="cuerpoDatos" class="register-container">
+      <form id="diseñoEncuesta" class="register-form">
+        <div>
+          <label for="Enombre">Nombre: </label>
+        </div>
+        <div>
+          <input type="text" id="EntradaNombre" name="EntradaNombre" />
+        </div>
+        <div>
+          <label for="ESalario">Salario: </label>
+        </div>
+        <div>
+          <input type="text" id="EntradaSalario" name="EntradaSalario" />
+        </div>
+        <div>
+          <label for="Egastos">Gastos: </label>
+        </div>
+        <div>
+          <input type="text" id="EntradaGastos" name="EntradaGastos" />
+        </div>
+        <div>
+          <label for="Emoneda">Moneda: </label>
+        </div>
+        <div>
+          <select id="EntradaMoneda">
+            <option value="">Seleccione una moneda</option>
+            <option value="cop">Peso colombiano</option>
+            <option value="us">Dolar Estadounidense</option>
+          </select>
+        </div>
+        <div class="register-button">
+          <input type="submit" value="registrar" />
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
