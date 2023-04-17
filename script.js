@@ -9,5 +9,5 @@ function imprimir(){
         console.log(nombre);
     }
 
-    
+    event.preventDefault();    
 }
