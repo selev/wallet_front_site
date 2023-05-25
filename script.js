@@ -2,12 +2,13 @@
 var nombreF;
 var salarioF;
 var gastoF;
+var monedaF;
 var formulario;
 
 
 
 
-imprimir=>{
+function imprimir(){
    
 
     event.preventDefault();
@@ -15,32 +16,36 @@ imprimir=>{
     enviarFormulario();  
 }
 
-TomarDatos=>{
+function TomarDatos(){
     
     nombreF= document.getElementById('EntradaNombre').value;
     salarioF= document.getElementById('EntradaSalario').value;
     gastoF= document.getElementById('EntradaGastos').value;
+    monedaF= document.getElementById('EntradaMoneda').value;
     formulario={
         nombre:nombreF,
         salario:salarioF,
-        gastos:gastoF
+        gastos:gastoF,
+        moneda:monedaF
     }
 
 }
 
 
 
-var EFormulario =enviarFormulario =>{
+
+function enviarFormulario (){
     console.log("entro al fetch");
-    fetch("https://2ac22411-09e1-451f-a8d7-bf9b048b892c.mock.pstmn.io/wallet/finanzas",
+    fetch("http://localhost:8080/finanza",
     {method: 'post',
+    headers: {"Content-Type": "application/json"},
     body:JSON.stringify(formulario)}
     )
     ;
 
 }
 
-//requerimiento entrar a pagina y mostrar en consola la lista de monedas
+
 
 function RecibirMoneda (){
 
@@ -55,15 +60,14 @@ function RecibirMoneda (){
     
 }
 
-function InsertarMoneda(TipoMoneda){
+function InsertarMoneda(BaseMoneda){
     let opciones= document.getElementById("EntradaMoneda");
-    console.log(TipoMoneda);
-    for(i=0;i<TipoMoneda.length;i++){
-        let NuevaMoneda = TipoMoneda[i];
+    console.log(BaseMoneda);
+    for(i=0;i<BaseMoneda.length;i++){
         
         let NuevaOpcion = document.createElement('option');
-        NuevaOpcion.text=NuevaMoneda;
-        NuevaOpcion.value=i;
+        NuevaOpcion.text=BaseMoneda[i].pais;
+        NuevaOpcion.value=BaseMoneda[i].id;
         
         opciones.appendChild(NuevaOpcion);  
 
@@ -73,6 +77,8 @@ function InsertarMoneda(TipoMoneda){
 
 
 }
+
+
 
 
 
