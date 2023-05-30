@@ -35,13 +35,15 @@ function TomarDatos(){
 
 
 function enviarFormulario (){
-    console.log("entro al fetch");
+    console.log("formulario del fetch: "+formulario);
     fetch("http://localhost:8080/finanza",
     {method: 'post',
     headers: {"Content-Type": "application/json"},
+    
     body:JSON.stringify(formulario)}
     )
     ;
+    
 
 }
 
